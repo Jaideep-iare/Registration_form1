@@ -15,7 +15,7 @@ let userEntries = retreiveEntries();
 
 const displayEntries = () =>{
     const entries = retreiveEntries();
-const tableEntries = entries.map((entry)=>{
+const tableEntries = Object.keys(entries).map((entry)=>{
         const nameCell = `<td>${entry.name}</td>`;
         const emailCell = `<td>${entry.email}</td>`;
         const passwordCell = `<td>${entry.password}</td>`;
