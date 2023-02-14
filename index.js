@@ -94,33 +94,24 @@ function validEmail(element){
 
 
 
-let a= document.getElementById("dob");
-
-function validcheck(){
-    if(a.value){
-        b=a.value;
-        b=b.replaceAll("-","");
+let dob1 =document.getElementById("dob");
+dob1.addEventListener("input", ()=> validcheck(dob1));
+function validcheck(dob1){
+    
+    let age = new Date().getFullYear() - new Date(dob1.value).getFullYear() -1;
+    console.log(age);
+    if(age < 18 || age>55){
+        dob1.setCustomValidity("Your age should be between 18 and 55");
+        dob1.reportValidity();
         
-        c=parseInt(b);  
+    }else{
+        
+        
+        
+      
+        dob1.reportValidity();
     }
-    if(c<19671109){
-        console.log(c);
-        a.setCustomValidity("Date must be 09-11-1967 or later.");
-        a.reportValidity();}
-    else if(c>20041109){
-        console.log(c);
-        a.setCustomValidity("Date must be 09-11-2004 or earlier.");
-        a.reportValidity();}
-    else{
-        a.setCustomValidity("");
-    }
-
-
-
-
-
 }
-
 
 
 
