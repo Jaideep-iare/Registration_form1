@@ -111,16 +111,7 @@ th{
     margin-top: 25px;
     margin-bottom: 15px;
 }
-.fillers{
-    border: rgba(0, 0, 0, 0.3) 1px solid;
-    width: 90%;
-    margin: auto;
-    position: relative;
-    top: 10px;
-    height: auto;
-    margin-bottom: 20px;
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
-}
+
 #input-submit{
     border: none;
     background-color: #22BC53;
