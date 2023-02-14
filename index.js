@@ -74,16 +74,52 @@ userForm.addEventListener("submit",saveUserForm);
 
 displayEntries();
 
-//date validation
-const dob2 = document.getElementById("dob");
-const today = new Date().toISOString().split("T")[0];
-const year = new Date().getFullYear();
-
-dob2.min = `${year - 56}-11-09`;
-dob2.max = `${year - 19}-11-09`;
 
 
 
+
+            //validatiions
+
+const email = document.getElementById("email");
+email.addEventListener("input", ()=> validEmail(email));
+
+
+
+function validEmail(element){
+    if(element.validity.typeMismatch){
+        element.setCustomValidity("The Email is not in the right format.")
+        element.reportValidity();
+    }else{element.setCustomValidity("");}
+}
+
+
+
+let a= document.getElementById("dob");
+
+function validcheck(){
+    if(a.value){
+        b=a.value;
+        b=b.replaceAll("-","");
+        
+        c=parseInt(b);  
+    }
+    if(c<19671109){
+        console.log(c);
+        a.setCustomValidity("Date must be 09-11-1967 or later.");
+        a.reportValidity();}
+    else if(c>20041109){
+        console.log(c);
+        a.setCustomValidity("Date must be 09-11-2004 or earlier.");
+        a.reportValidity();}
+    else{
+        a.setCustomValidity("");
+    }
+
+
+
+
+
+}
 
 
 
