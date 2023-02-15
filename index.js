@@ -90,15 +90,15 @@ show_the_table = () => {
                     <th>Dob</th>
                     <th>Accepted terms?</th>
                 </tr>`;
-  for (let i = 0; i < objet_of_entries.length; i++) {
+  objet_of_entries.forEach(entry =>{
     word += `\n<tr>
-                    <td>${objet_of_entries[i].name}</td>
-                    <td>${objet_of_entries[i].email}</td>
-                    <td>${objet_of_entries[i].password}</td>
-                    <td>${objet_of_entries[i].dob}</td>
-                    <td>${objet_of_entries[i].checked}</td>
+                    <td>${entry.name}</td>
+                    <td>${entry.email}</td>
+                    <td>${entry.password}</td>
+                    <td>${entry.dob}</td>
+                    <td>${entry.checked}</td>
                 </tr>`;
-  }
+  })
   table.innerHTML = word;
 };
 
